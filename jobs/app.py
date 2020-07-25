@@ -19,7 +19,7 @@ def execute_sql():
     single = False
     cursor = connection.execute(sql, values)
     if (commit == True):
-        connection.commit()
+        results = connection.commit()
     
     results = cursor.fetchone() if single else cursor.fetchall()
     cursor.close()
